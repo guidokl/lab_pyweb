@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Register Page">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}" />
+	<title>Register</title>
+</head>
+<body>
+	<header>
+		<h1>Register</h1>
+		<nav>
+			<a href="{{ url_for('home') }}">Home</a>
+			<a href="{{ url_for('register') }}">Register</a>
+		</nav>
+	</header>
+
+	<main>
+		<div id="container">
+			<section style="width: 600px;">
+				{% if error %}
+					<div class="error" style="color: red; margin-bottom: 20px">{{ error }}</div>
+				{% endif %}
+				<form method="post" action="{{ url_for('register')}}">
+					<label for="username">Username:</label><br>
+					<input type="text" id="username" name="username" required><br><br>
+
+					<label for="password">Password:</label><br>
+					<input type="password" id="username" name="password"><br><br>
+
+					<input type="submit" value="Register">
+				</form>
+			</section>
+		</div>
+	</main>
+
+	<footer>
+		<p>Impressum</p>
+	</footer>
+</body>
+</html>
