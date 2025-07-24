@@ -40,6 +40,7 @@ def home():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     error = None
+    success = None
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -50,7 +51,7 @@ def register():
             success = "Registration successful! You can now log in."
         except sqlite3.IntegrityError:
             error = "Username already taken"
-    return render_template('register.html', error=error)
+    return render_template('register.html', error=error, success=success)
         
 # Main
 if __name__ == "__main__":
