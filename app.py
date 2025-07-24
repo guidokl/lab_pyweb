@@ -47,6 +47,7 @@ def register():
         try:
             db.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
             db.commit()
+            success = "Registration successful! You can now log in."
         except sqlite3.IntegrityError:
             error = "Username already taken"
     return render_template('register.html', error=error)

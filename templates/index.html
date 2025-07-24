@@ -18,18 +18,7 @@
 	<main>
 		<div id="container">
 			<section style="width: 600px;">
-				{% if error %}
-					<div class="error" style="color: red; margin-bottom: 20px">{{ error }}</div>
-				{% endif %}
-				<form method="post" action="{{ url_for('register')}}">
-					<label for="username">Username:</label><br>
-					<input type="text" id="username" name="username" required><br><br>
-
-					<label for="password">Password:</label><br>
-					<input type="password" id="username" name="password"><br><br>
-
-					<input type="submit" value="Register">
-				</form>
+				<h1>Home</h1>
 			</section>
 		</div>
 	</main>
