@@ -2,22 +2,30 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="description" content="Register Page">
+	<meta name="description" content="Register">
+	<meta name="keywords" content"html, fiae, css, lernen">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap" rel="stylesheet">
 	<title>Register</title>
 </head>
+
 <body>
 	<header>
 		<h1>Register</h1>
 		<nav>
 			<a href="{{ url_for('home') }}">Home</a>
+			<span> • </span>
 			<a href="{{ url_for('register') }}">Register</a>
+			<span> • </span>
+			<a href="{{ url_for('videos') }}">Videos</a>
 		</nav>
 	</header>
 
-	<main>
+	<main>	
 		<div id="container">
-			<section style="width: 600px;">
+			<section style="width: 40%;">
 				{% if error %}
 					<div class="error" style="color: red; margin-bottom: 20px">{{ error }}</div>
 				{% endif %}
@@ -34,7 +42,37 @@
 					<input type="submit" value="Register">
 				</form>
 			</section>
-		</div>
+			
+			<section style="width: 60%;">
+				<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. <code>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</code></p>
+					<table>
+						<tr>
+							<th>Lo</th>
+							<th>Rem</th>
+							<th>Ipsum</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+						</tr>
+						<tr>
+							<td>a</td>
+							<td>b</td>
+							<td>c</td>
+						</tr>
+						<tr>
+							<td>x</td>
+							<td>y</td>
+							<td>z</td>
+						</tr>
+					</table>
+			</section>
+    </div>
+
+		<section>
+			<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. <code>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</code></p>
+		</section>
 	</main>
 
 	<footer>

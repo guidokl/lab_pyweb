@@ -45,6 +45,7 @@ def register():
         username = request.form['username']
         password = request.form['password']
         db = get_db()
+        print("SQL:", f"INSERT INTO users (username, password) VALUES ('{username}', '{password}')")
         try:
             db.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
             db.commit()
@@ -52,7 +53,12 @@ def register():
         except sqlite3.IntegrityError:
             error = "Username already taken"
     return render_template('register.html', error=error, success=success)
+
+# index.html
+@app.route('/videos')
+def videos():
+    return render_template("videos.html")
         
 # Main
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=666, debug=True)
